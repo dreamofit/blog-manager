@@ -16,10 +16,13 @@ export default class RichText extends React.Component{
         })
     }
     handleGetText = () => {    //获取文本内容
-        this.setState({
-            showRichText: true
-        })
+        console.log(draftjs(this.state.editorContent))
     }
+
+    uploadContent = () => {
+        
+    }
+
     onEditorStateChange = (editorState) => {   //编辑器的状态
         this.setState({
             editorState
@@ -60,17 +63,6 @@ export default class RichText extends React.Component{
                       onClick={this.handleGetText}>
                       上传文章</Button>
                 </Card>
-                {/* <Modal
-                    title="富文本"
-                    visible={this.state.showRichText}
-                    onCancel={() =>{
-                        this.setState({
-                            showRichText: false
-                        })
-                    }}
-                    footer={null}>
-                    {draftjs(this.state.editorContent)}
-                </Modal> */}
             </div>
         )
     }
